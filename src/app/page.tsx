@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Sidebar from '../components/Sidebar';  // Adjust the import path if needed
 import imageBg from '../../public/topic.png';
+import loopBg from '../../public/loop.jpg';
+ 
 
 
 export default function Home() {
@@ -182,6 +184,7 @@ console.log(fruits.length); // Output: 3`}
           {selectedTopic === 'loops' && (
             <>
               <p className="mb-4">Loops in JavaScript are used to perform repeated actions. Here are some common types of loops:</p>
+              <Image src={loopBg} width={400} height={200} alt="JavaScript" className="w-full mb-4" />
               <ul className="list-disc pl-6 mb-4">
                 <li><strong>for loop:</strong> Repeats a block of code a specified number of times.</li>
                 <li><strong>while loop:</strong> Repeats a block of code as long as a condition is true.</li>
