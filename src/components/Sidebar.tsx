@@ -1,5 +1,9 @@
 import Link from 'next/link';
 
+interface SidebarProps {
+  setSelectedTopic: (slug: string) => void;
+}
+
 const topics = [
   { id: 1, title: 'Introduction', slug: 'introduction' },
   { id: 2, title: 'Basic Syntax', slug: 'basic-syntax' },
@@ -16,7 +20,7 @@ const topics = [
   // Add more topics as needed
 ];
 
-export default function Sidebar({ setSelectedTopic }) {
+export default function Sidebar({ setSelectedTopic }: SidebarProps) {
   return (
     <div className="w-full md:w-1/4 bg-gray-200 p-4">
       <h2 className="text-lg font-semibold mb-4">Topics</h2>
