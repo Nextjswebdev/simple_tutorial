@@ -7,9 +7,13 @@ import imageBg from '../../public/topic.png';
 import loopBg from '../../public/loop.jpg';
  
 
+interface SidebarProps {
+  setSelectedTopic: (slug: string | null) => void;
+}
+
 
 export default function Home() {
-  const [selectedTopic, setSelectedTopic] = useState(null);
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
