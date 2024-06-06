@@ -8,7 +8,7 @@ import loopBg from '../../public/loop.jpg';
  
 
 interface SidebarProps {
-  setSelectedTopic: (slug: string | null) => void;
+  setSelectedTopic: (selectedTopic: string | null) => void;
 }
 
 
