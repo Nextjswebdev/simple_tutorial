@@ -16,13 +16,13 @@ const topics = [
   { id: 9, title: 'Deploying Your App', slug: 'deploy' },
 ];
 
-const CodeBlock = ({ children }) => (
+const CodeBlock = ({ children }: { children: React.ReactNode }) => (
   <pre className="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
     <code className="text-sm font-mono">{children}</code>
   </pre>
 );
 
-const HighlightedText = ({ color, children }) => (
+const HighlightedText = ({ color, children }: { color: string, children: React.ReactNode }) => (
   <span className={`font-semibold ${color}`}>{children}</span>
 );
 
@@ -111,7 +111,7 @@ export default function Home() {
   );
 }
 
-function renderContent(slug) {
+function renderContent(slug:any) {
   switch(slug) {
     case 'intro':
       return (
@@ -185,7 +185,7 @@ export default function Navbar() {
       return (
         <>
           <h2 className="text-2xl font-bold mb-4">Adding Styles</h2>
-          <p className="mb-4">Next.js supports CSS Modules out of the box. Here's how to use them:</p>
+          <p className="mb-4">Next.js supports CSS Modules out of the box. Here is how to use them:</p>
           <CodeBlock>
 {`// styles/Home.module.css
 .title {
@@ -208,7 +208,7 @@ export default function Home() {
       return (
         <>
           <h2 className="text-2xl font-bold mb-4">Creating Components</h2>
-          <p className="mb-4">React components are reusable pieces of UI. Here's a simple component in Next.js:</p>
+          <p className="mb-4">React components are reusable pieces of UI. Here is a simple component in Next.js:</p>
           <CodeBlock>
 {`// components/Header.js
 export default function Header({ title }) {
@@ -235,7 +235,7 @@ export default function Home() {
       return (
         <>
           <h2 className="text-2xl font-bold mb-4">Fetching Data</h2>
-          <p className="mb-4">Next.js provides several ways to fetch data. Here's an example using getServerSideProps:</p>
+          <p className="mb-4">Next.js provides several ways to fetch data. Here is an example using getServerSideProps:</p>
           <CodeBlock>
 {`// pages/users.js
 export async function getServerSideProps() {
@@ -262,7 +262,7 @@ export default function Users({ users }) {
       return (
         <>
           <h2 className="text-2xl font-bold mb-4">Dynamic Routes</h2>
-          <p className="mb-4">Dynamic routes allow you to create pages with paths that depend on external data. Here's how to create them:</p>
+          <p className="mb-4">Dynamic routes allow you to create pages with paths that depend on external data. Here is how to create them:</p>
           <CodeBlock>
 {`// pages/posts/[id].js
 import { useRouter } from 'next/router'
@@ -282,7 +282,7 @@ export default function Post() {
       return (
         <>
           <h2 className="text-2xl font-bold mb-4">API Routes</h2>
-          <p className="mb-4">Next.js allows you to create API endpoints as Node.js serverless functions. Here's a simple example:</p>
+          <p className="mb-4">Next.js allows you to create API endpoints as Node.js serverless functions. Here is a simple example:</p>
           <CodeBlock>
 {`// pages/api/hello.js
 export default function handler(req, res) {
