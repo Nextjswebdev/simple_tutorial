@@ -235,7 +235,7 @@ function renderContent(slug: string, setSelectedTopic: (slug: string) => void) {
       content = (
         <>
           <h2 className="text-3xl font-bold mb-4">What's Next.js?</h2>
-          <Image src="/logo.png" width={800} height={100} alt="Next.js Logo" className="mb-4" />
+          <Image src="/logo.png" width={800} height={100} alt="Next.js Logo" className="mb-4" priority={false}/>
           <p className="mb-4">Imagine you're assembling a high-tech robot 🤖. Next.js is like having a super-advanced toolkit that makes everything easier and more efficient. It's a <Tooltip text="A framework is like a pre-built structure that helps you create things faster and easier.">
             framework
           </Tooltip> for React that transforms your ideas into awesome websites at lightning speed. Here's what makes it so cool:</p>
@@ -509,21 +509,23 @@ function renderContent(slug: string, setSelectedTopic: (slug: string) => void) {
   return (
     <>
       {content}
-      <div className="mt-8 flex justify-between">
+      <div className="mt-8 flex flex-col sm:flex-row justify-between gap-4">
         {prevTopic && (
           <button
             onClick={() => setSelectedTopic(prevTopic.slug)}
-            className="bg-indigo-500 text-white px-2 py-1 text-[0.7rem] rounded hover:bg-indigo-600 transition duration-200"
+            className="bg-indigo-500 text-white px-3 py-2 text-sm rounded hover:bg-indigo-600 transition duration-200 flex items-center justify-center sm:justify-start"
           >
-            ← {prevTopic.title}
+            <span className="mr-1">←</span>
+            <span className="truncate">{prevTopic.title}</span>
           </button>
         )}
         {nextTopic && (
           <button
             onClick={() => setSelectedTopic(nextTopic.slug)}
-            className="bg-indigo-500 text-white px-2 py-1 text-[0.7rem] rounded hover:bg-indigo-600 transition duration-200"
+            className="bg-indigo-500 text-white px-3 py-2 text-sm rounded hover:bg-indigo-600 transition duration-200 flex items-center justify-center sm:justify-end"
           >
-            {nextTopic.title} →
+            <span className="truncate">{nextTopic.title}</span>
+            <span className="ml-1">→</span>
           </button>
         )}
       </div>
