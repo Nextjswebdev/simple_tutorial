@@ -513,7 +513,7 @@ function renderContent(slug: string, setSelectedTopic: (slug: string) => void) {
         {prevTopic && (
           <button
             onClick={() => setSelectedTopic(prevTopic.slug)}
-            className="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition duration-200"
+            className="bg-indigo-500 text-white px-2 py-1 text-[0.7rem] rounded hover:bg-indigo-600 transition duration-200"
           >
             ← {prevTopic.title}
           </button>
@@ -521,7 +521,7 @@ function renderContent(slug: string, setSelectedTopic: (slug: string) => void) {
         {nextTopic && (
           <button
             onClick={() => setSelectedTopic(nextTopic.slug)}
-            className="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition duration-200"
+            className="bg-indigo-500 text-white px-2 py-1 text-[0.7rem] rounded hover:bg-indigo-600 transition duration-200"
           >
             {nextTopic.title} →
           </button>
